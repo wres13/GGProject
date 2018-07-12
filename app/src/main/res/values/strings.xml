@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">GG</string>
+
+    <string name="main_home_btn">首页</string>
+    <string name="main_category_btn">分类</string>
+    <string name="main_dynamic_btn">动态</string>
+    <string name="main_msg_btn">消息</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="rv_more_layout">加载更多数据。。。</string>
+    <string name="rv_nomore_layout">没有更多数据</string>
+
+    <string-array name="main_home_tab_category">
+        <item>推荐</item>
+        <item>清纯</item>
+        <item>性感</item>
+        <item>二次元</item>
+    </string-array>
+</resources>

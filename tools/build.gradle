@@ -1,0 +1,72 @@
+apply plugin: 'com.android.library'
+//android配置
+def config = rootProject.ext.android
+
+//相关库依赖
+def librarys = rootProject.ext.supportDependencies
+android {
+    compileSdkVersion config.compileSdkVersion
+    buildToolsVersion config.buildToolsVersion
+    defaultConfig {
+        minSdkVersion config.minSdkVersion
+        targetSdkVersion config.targetSdkVersion
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        javaCompileOptions {
+
+            annotationProcessorOptions {
+
+                includeCompileClasspath = true
+
+            }
+
+        }
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    packagingOptions {
+        exclude 'LICENSE.txt'
+    }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.1'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
+    implementation librarys.supportAppcompat
+    implementation librarys.supportV4
+    implementation librarys.suppoutDesign
+    implementation librarys.recyclerview
+
+    compile 'com.github.bumptech.glide:glide:3.7.0'
+    compile ('com.alibaba.android:vlayout:1.0.4@aar') {
+        transitive = true
+    } 
+    compile 'com.squareup.retrofit2:retrofit:2.3.0'
+    compile 'com.squareup.retrofit2:adapter-rxjava:2.3.0'
+    compile 'com.squareup.retrofit2:converter-gson:2.3.0'
+    compile 'io.reactivex:rxandroid:1.1.0'
+    compile 'com.google.code.gson:gson:2.7'
+    //cookie缓存
+    compile 'com.github.franmontiel:PersistentCookieJar:v1.0.0'
+    compile 'com.orhanobut:hawk:2.0.1'
+    compile 'org.greenrobot:eventbus:3.0.0'
+    compile 'com.jakewharton:butterknife:7.0.1'
+    //lottie动画
+    compile 'com.airbnb.android:lottie:2.5.0-beta3'
+    compile 'com.android.support:cardview-v7:26.1.0'
+    //友盟
+    compile 'com.umeng.analytics:analytics:latest.integration'
+    compile 'com.umeng.sdk:common:latest.integration'
+
+
+
+
+}
